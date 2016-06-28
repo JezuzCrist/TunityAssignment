@@ -1,0 +1,52 @@
+{
+  "name": "tunity_assignment",
+  "version": "0.0.0",
+  "description": "REST monitoring service that supports TTL checks",
+  "main": "build/server.js",
+  "scripts": {
+    "test": "npm run test",
+    "start": "npm run build && node ./build/server.js",
+    "build": "babel ./source -d ./build",
+    "lint": "eslint \"./source/**\"",
+    "a": "eslint \"./source/server.js\"",
+    "b": "eslint -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JezuzCrist/TunityAssignment.git"
+  },
+  "keywords": [
+    "tunity",
+    "assignment"
+  ],
+  "author": "mintz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JezuzCrist/TunityAssignment/issues"
+  },
+  "homepage": "https://github.com/JezuzCrist/TunityAssignment#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-eslint": "^6.1.0",
+    "babel-preset-es2015": "^6.9.0",
+    "eslint": "^2.13.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "eslintConfig": {
+      "parser": "babel-eslint",
+    "env": {
+      "node": true,
+      "es6": true
+    },
+    "parserOptions": {
+    "sourceType": "module"
+  }
+  }
+}
