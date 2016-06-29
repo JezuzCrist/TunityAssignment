@@ -1,3 +1,22 @@
+
+### install
+```
+    npm install
+```
+
+### Run the server
+```
+    npm start
+```
+
+### run BDD tests
+```
+    1. start a server: npm start,
+    2. run tests: npm test
+```
+
+
+
 Create a REST monitoring service that supports TTL checks (see https://www.consul.io/docs/agent/checks.html for a definition of a TTL check)
 
 ### API
@@ -32,19 +51,3 @@ show the currently failing checks
 ### Alerts
 the alert should output to console or a predefined callback url
 
-
-### install
-```
-    npm install
-```
-
-### Run the server
-```
-    npm start
-```
-
-### run BDD tests
-```
-    1. start a server: npm start,
-    2. run tests: npm test
-```
