@@ -2,5 +2,6 @@
 	"server":{
 		"port":3010,
         "adress":"localhost"
-	}
+	},
+    "checksFileLocation":"/data/checks.json"
 }
