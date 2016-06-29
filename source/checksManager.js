@@ -11,7 +11,8 @@ export default class ChecksManager {
             this.loadChecks(() => {
                 this._createTTLTimeoutsForAllChecks();
             });
-
+            this._saveInterval = 20000;
+            setInterval(()=> this.saveChecks(),this._saveInterval);
         }
         console.log("checksManager created");
     }
@@ -59,9 +60,8 @@ export default class ChecksManager {
         });
     }
     saveChecks() {
-        fs.writeFile(this._checksJsonLocation, this._checks, (err) => {
+        fs.writeFile(this._checksJsonLocation, JSON.stringify(this._checks), (err) => {
             if (err) throw err;
-            console.log('checks saved!');
         });
     }
     _failCheck(check_name) {
