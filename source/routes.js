@@ -39,7 +39,7 @@ export default class Routes {
     }
     _isTTLValid(ttl) {
         try {
-            if (ttl === undefined || ttl === null || parseInt(ttl) <= 0)
+            if (!ttl || isNaN(ttl) || parseInt(ttl) <= 0)
                 return false;
             return true;
         } catch (error) {
@@ -48,7 +48,7 @@ export default class Routes {
     }
     _isCheckNameValid(check_name) {
         try {
-            if (check_name === undefined || check_name === null)
+            if (!check_name)
                 return false;
             return true;
         } catch (error) {
