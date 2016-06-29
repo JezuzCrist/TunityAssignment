@@ -21,6 +21,7 @@ export default class Routes {
         let checkTTL = req.query.ttl;
         if (this._isCheckNameValid(wantedCheckName) && this._isTTLValid(checkTTL)) {
             checkTTL = timeInMS(`${checkTTL}s`);
+            this._checksManager.upsert(wantedCheckName, checkTTL);
             res.send(`${wantedCheckName}-ttl(${checkTTL})-added`);
         } else {
             res.status(HTTPStatus.NOT_ACCEPTABLE).send(`incurrect input at ${wantedCheckName},${checkTTL}`);
@@ -28,8 +29,12 @@ export default class Routes {
     }
     _deleteCheck(req, res) {
         let wantedCheckName = req.params.check_name;
-        this._checksManager.delete(wantedCheckName)
-        res.send(`${wantedCheckName}-removed`);
+        if (this._isCheckNameValid(wantedCheckName)) {
+            this._checksManager.delete(wantedCheckName);
+            res.status(HTTPStatus.ACCEPTED).send(`${wantedCheckName}-removed`);
+        } else {
+            res.status(HTTPStatus.NOT_ACCEPTABLE).send(`incurrect input at ${wantedCheckName}`);
+        }
     }
     _getChecks(req, res) {
         res.send(this._checksManager.getAllChecks());
