@@ -14,7 +14,6 @@ export default class ChecksManager {
             this._saveInterval = 20000;
             setInterval(()=> this.saveChecks(),this._saveInterval);
         }
-        console.log("checksManager created");
     }
     delete(check_name) {
         delete this._checks[check_name];

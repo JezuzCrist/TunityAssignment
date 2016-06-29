@@ -5,7 +5,6 @@ import HTTPStatus from "http-status";
 export default class Routes {
     constructor() {
         this._checksManager = new ChecksManager();
-        console.log("routes created");
     }
     get helloWorldRoute() { return this._helloWorldRoute; }
     get getChecks() { return (req, res) => this._getChecks(req, res); }
