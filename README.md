@@ -11,7 +11,7 @@
 
 ### run BDD tests
 ```
-    1. start a server: npm start,
+    1. start a testing server: npm run testServer,
     2. run tests: npm test
 ```
 

@@ -6,6 +6,7 @@
     "scripts": {
         "test": "eslint \"./source/test/**\" && babel ./source/test -d ./build/test && mocha ./build/test/**",
         "start": "npm run lint && npm run build && node ./build/server.js",
+        "testServer": "npm run lint && npm run build && NODE_ENV=\"test\" node ./build/server.js",
         "build": "babel ./source -d ./build",
         "lint": "eslint \"./source/**\""
     },
@@ -51,7 +52,8 @@
             "sourceType": "module"
         },
         "rules": {
-            "no-console": "off"
+            "no-console": "off",
+            "no-unused-vars": "warn"
         }
     }
 }
