@@ -99,6 +99,19 @@ describe(`Behavior test`, function() {
         postCheck(check_name, ttl);
         getChecks([{ name: check_name, live: true }]);
         deleteCheck(check_name);
-
+        getChecks([]);
+    });
+    describe(`Posting 2 checks to ${postCheckUrl}:check_name:, and getting/removeing it from ${checksUrl}`, function() {
+        let check_name = "haveAniceDay";
+        let check_name2 = "haveAniceDay2";
+        let ttl = 150;
+        getChecks([]);
+        postCheck(check_name, ttl);
+        postCheck(check_name2, ttl);
+        getChecks([{ name: check_name, live: true },{ name: check_name2, live: true }]);
+        deleteCheck(check_name);
+        getChecks([{ name: check_name2, live: true }]);
+        deleteCheck(check_name2);
+        getChecks([]);
     });
 })
