@@ -31,3 +31,20 @@ show the currently failing checks
 
 ### Alerts
 the alert should output to console or a predefined callback url
+
+
+### install
+```
+    npm install
+```
+
+### Run the server
+```
+    npm start
+```
+
+### run BDD tests
+```
+    1. start a server: npm start,
+    2. run tests: npm test
+```
