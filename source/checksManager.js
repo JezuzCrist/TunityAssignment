@@ -12,7 +12,7 @@ export default class ChecksManager {
                 this._createTTLTimeoutsForAllChecks();
             });
             this._saveInterval = 20000;
-            setInterval(()=> this.saveChecks(),this._saveInterval);
+            setInterval(() => this.saveChecks(), this._saveInterval);
         }
     }
     delete(check_name) {
@@ -67,6 +67,7 @@ export default class ChecksManager {
         let check = this._checks[check_name];
         if (check)
             check.live = false;
+        console.warn(`${check_name} - failing`);
     }
     _addTTLTimeout(check_name, ttl) {
         this._ttlTimeouts[check_name] = setTimeout(() => this._failCheck(check_name), ttl);
