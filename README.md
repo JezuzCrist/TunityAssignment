@@ -15,9 +15,17 @@
     2. run tests: npm test
 ```
 
-
-
 Create a REST monitoring service that supports TTL checks (see https://www.consul.io/docs/agent/checks.html for a definition of a TTL check)
+
+### config.json
+Properties | Description
+------------ | -------------
+server.port | the servers port to run on
+server.adress | the IP the server is running on (used in testsing)
+checksFileLocation | the file location to load and store checks
+*callbackUrl(*)* | callbackUrl that will be active when checks are failing
+
+*callbackUrl not implemented*
 
 ### API
 
